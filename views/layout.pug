@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title Free Lunch
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='stylesheets/style.css')
+  body
+     block banner
+           div.container-fluid.bg-primary
+                div.row.banner
+                     div.col-sm-1
+                     div.col-xs-1
+                          a(href="/") 
+                              img(src="/images/icon.png", width="30px", style="padding-top:13px")
+                     div.col-sm-4.bar-button
+                          p.bar-button-text Free Lunch
+                     div.col-sm-3
+                     div.col-sm-1.bar-button
+                          unless authorised
+                               a.bar-button-text(href="/signup") Sign up 
+                     div.col-sm-1.bar-button
+                          unless authorised
+                               a.bar-button-text(href="/signin") Log in
+                               
+     block content
+         
