@@ -18,9 +18,20 @@ a:hover {
      text-decoration: none;
 }
 
+img.icon {
+     width: 30px;
+     padding-top: 13px;
+}
+
+/* img.icon:hover {
+     width: 34px;
+     padding-top: 12px;
+} fix this so it doesn't move other elements */
+
 .banner {
      background-color: #07d1f4;
 }
+
 .bar-button {
      padding-top: 15px;
 }
@@ -30,8 +41,25 @@ a:hover {
      font-weight: bold;
 }
 
+button.wide {
+     background-color: white;
+     margin: auto;
+     display: block;
+     border: solid;
+     border-radius: 2px;
+     border-width: thin;
+     color: black;
+     height: 40px;
+     width: 200px;
+     padding: 5px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+}
+
 /* Jumbotron styling */
-.jumbotron.signin {
+.jumbotron.form {
      background-color: white;
      margin: 50px auto auto auto;
 
