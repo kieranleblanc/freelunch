@@ -1,0 +1,10 @@
+extends ../layout
+include ../mixins
+
+block content
+     div.jumbotron.form(style="position:relative")
+          form.form-horizontal(method="POST", action="/users/new/consumer")
+               input.top.span3.signin(id="name", type="text", name="name", placeholder="First name")
+               input.span3.signin(id="email", type="text", name="email", placeholder="Email address")
+               input.span3.signin(id="password", type="password", name="password", placeholder="Password")
+               +selector(type="submit", value="Submit")

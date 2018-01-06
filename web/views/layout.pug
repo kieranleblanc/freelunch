@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title Free Lunch
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+  body
+     block banner
+           div.container-fluid.bg-primary
+                div.row.banner
+                     div.col-sm-1
+                     div.col-xs-1
+                          a(href="/") 
+                              img.icon(src="/images/icon.png")
+                     div.col-sm-8
+                     unless authenticated
+                          div.col-sm-1.bar-button
+                               a.bar-button-text(href="/signup") Sign up 
+                          div.col-sm-1.bar-button
+                               a.bar-button-text(href="/signin") Log in
+                     else 
+                          div.col-sm-1.bar-button
+                               a.bar-button-text(href="/post") Post                     
+     block content
+     block footer
+          div.footer
+               hr
+               p.footer
+               | Free Lunch is a non-profit project. You can contribute on  
+               | Github #[a(href="http://www.github.com/samziz/freelunch") here].

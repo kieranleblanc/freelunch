@@ -1,0 +1,23 @@
+extends ../layout
+include ../mixins
+               
+block content
+     div.container
+          div.jumbotron.form.pair.centred.parent(
+               style="margin-left: 10%; width:40%; height: 30%; float:left"
+               )
+               h4.top.centred Join as a supplier
+               p(style="text-align:center").
+                    Choose this option if you have surplus food you want to
+                    list on the site.
+               a(href="/signup/supplier")
+                    +selector
+          div.jumbotron.form.pair.centred.parent(
+               style="margin-left: 10%; width:40%; height: 30%; float:left"
+               )
+               h4.top.centred Join as a consumer
+               p(style="text-align:center").
+                    Choose this option if you don't have surplus food, but you can
+                    take surplus food.
+               a(href="/signup/consumer")
+                    +selector

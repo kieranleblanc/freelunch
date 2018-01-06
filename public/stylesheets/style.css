@@ -1,12 +1,59 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Barlow');
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Barlow', sans-serif;
 }
 
 p {
   font-size: 18px;
 }
+
+/* Classes */
+
+.banner {
+     background-color: #07d1f4;
+}
+
+.bar-button {
+     padding-top: 15px;
+     padding-bottom: 15px;
+}
+
+     .bar-button-text {
+          color: white;
+          font-size: 17px;
+          font-weight: 600;
+     }
+
+
+.centred.parent {
+     position: relative;
+}
+
+     .centred.child {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+     }
+
+
+.top {
+     position: absolute;
+     top: 20px;
+}
+
+     .top.centred {
+          left: calc(50% - 100px);
+     }
+
+
+.bottom {
+     position: absolute;
+     bottom: 20px;
+}
+
+     /* Extensions */
 
 a {
   color: #b3b3b3;
@@ -18,37 +65,14 @@ a:hover {
      text-decoration: none;
 }
 
-img.icon {
-     width: 30px;
-     padding-top: 13px;
-}
-
-/* img.icon:hover {
-     width: 34px;
-     padding-top: 12px;
-} fix this so it doesn't move other elements */
-
-.banner {
-     background-color: #07d1f4;
-}
-
-.bar-button {
-     padding-top: 15px;
-}
-
-.bar-button-text {
-     color: white;
-     font-weight: bold;
-}
-
 button.wide {
      background-color: white;
-     margin: auto;
+     margin-bottom: auto;
      display: block;
      border: solid;
      border-radius: 2px;
      border-width: thin;
-     color: black;
+     color: gray;
      height: 40px;
      width: 200px;
      padding: 5px;
@@ -56,27 +80,61 @@ button.wide {
      text-decoration: none;
      display: inline-block;
      font-size: 16px;
+
+     position: absolute;
+     bottom: 20px;
+     left: calc(50% - 100px);
 }
 
-/* Jumbotron styling */
+div.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+}
+
+img.icon {
+     width: 30px;
+     padding: 13px 1px 13px 1px;
+}
+
+img.icon:hover {
+     padding: 12px 0px 12px 0px;
+}
+
+p.footer {
+     font-size: 15px;
+     padding-left: 80px;
+}
+
+
+/* Bootstrap extensions */
+
 .jumbotron.form {
      background-color: white;
-     margin: 50px auto auto auto;
-
-     max-width: 360px;
-     max-height: 500px;
+     margin: 5% auto auto auto;
+     margin-left: 35%;
 
      border-style: solid;
      border-color: #e2e2e2;
      border-width: 0.5px;
      border-radius: 10px;
+     position: relative;
+
+     max-width:30%;
+     height: 30%;
+     float:left;
 }
+
+     .pair {
+          margin-left: 12.5% !important;
+     }
 
 .span3.signin {
      margin: 10px 10px auto 10px;
-
      padding-left: 8px;
-
      width: 270px;
      height: 30px;
      border-style: solid;

@@ -1,0 +1,10 @@
+mixin error
+     div.alert.alert-danger.alert-dismissable(id="error", name="error", hidden)
+          a.close(href="#", data-dismiss="alert", aria-label="close")
+               span &times;
+          p(style="margin:auto") Something went wrong!
+
+mixin selector
+     div.wrapper(style="text-align:center")
+          button.wide
+               p(onclick='return submit()') Select
