@@ -1,9 +1,9 @@
-var Sequelize = require('sequelize');
-const sequelize = new Sequelize('postgres://postgres@localhost:5432/users');
+const bcrypt = require('bcrypt'),
+      Sequelize = require('sequelize'),
+      sequelize = new Sequelize('postgres://postgres@localhost:5432/users');
+      
+const Listing = require('./listing.js');
 
-var bcrypt = require('bcrypt');
-
-var Listing = require('./listing.js');
 
 const User = sequelize.define('users', {
 
@@ -34,18 +34,19 @@ const User = sequelize.define('users', {
         const salt = bcrypt.genSaltSync();
         user.password = bcrypt.hashSync(user.password, salt);
       }
-    },
-    instanceMethods: {
-      validate: function(password) {
-        return bcrypt.compareSync(password, this.password);
-      }
     }
 });
 
+
 User.hasMany(Listing);
+
+User.prototype.checkPass = function(password) {
+  var val = bcrypt.compareSync(password, this.password);
+  return val
+}
+
 
 User.sync()
     .catch(error => console.log(error.stack));
 
-// export User model for use in other files.
 module.exports = User;

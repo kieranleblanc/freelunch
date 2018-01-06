@@ -103,13 +103,16 @@ app.use('/users/new', function(req, res, next) {
 
 app.post('/auth', function(req, res) {
      User.findOne({ where: { email: req.body.email } }).then(function (user) {
-           if (!user || !user.validate(req.body.password)) {
-                res.setHeader('Content-Type', 'application/json');
-                res.send(error);
-           } else {
-                req.session.user = user.dataValues;
-                res.send(success);
-           };
+          console.log("PASSWORDIS " +req.body.password)
+          if (!user || !user.checkPass(req.body.password) ) {
+               console.log("failed to validate pass2")
+               res.setHeader('Content-Type', 'application/json');
+               res.send(error);
+          } else {
+               console.log("validated pass")
+               req.session.user = user;
+               res.send(success);
+          }
      });
 });
 

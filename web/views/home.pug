@@ -1,6 +1,12 @@
 extends layout
 
 block content
+     script.
+          function showBox() {
+               const box = document.getElementById('box');
+               box.hidden = !box.hidden;
+               curtain.hidden = !curtain.hidden;
+          }
      div.container(style="padding-top:40px")
           div.jumbotron.centred.parent
                h2.centred.child(style="color:grey").

@@ -9,19 +9,19 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/signin', function(req, res, next) {
-     res.render('signin', { title: 'Signin' })
+     res.render('signin')
 })
 
 router.get('/signup', function(req, res, next) {
-     res.render('signup/signup', { title: 'Signup' })
+     res.render('signup/signup')
 })
 
 router.get('/signup/supplier', function(req, res, next) {
-     res.render('signup/supplier', { title: 'Signup' })
+     res.render('signup/supplier')
 })
 
 router.get('/signup/consumer', function(req, res, next) {
-     res.render('signup/consumer', { title: 'Signup' })
+     res.render('signup/consumer')
 })
 
 module.exports = router;
