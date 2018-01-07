@@ -8,17 +8,15 @@ function didSelectCurtain() {
 
 function didSelectLogin() {
      const login = document.getElementById('login');
-     login.hidden = !login.hidden;
-     curtain.hidden = !curtain.hidden;
+     login.hidden = !login.hidden; curtain.hidden = !curtain.hidden;
 }
 
 function didSelectPost() {
      const post = document.getElementById('post');
-     post.hidden = !post.hidden;
-     curtain.hidden = !curtain.hidden;
+     post.hidden = !post.hidden; curtain.hidden = !curtain.hidden;
 }
 
-function submitLoginForm() {
+function didSubmitForm() {
       var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
       var request = new XMLHttpRequest();

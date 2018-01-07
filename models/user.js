@@ -1,9 +1,10 @@
-const bcrypt = require('bcrypt'),
+const app = require('../app.js'),
+      bcrypt = require('bcrypt'),
+      config = require('../config.js'),
       Sequelize = require('sequelize'),
-      sequelize = new Sequelize('postgres://postgres@localhost:5432/users');
-      
-const Listing = require('./listing.js');
+      sequelize = config.sequelize;
 
+const Listing = require('./listing.js');
 
 const User = sequelize.define('users', {
 
@@ -44,7 +45,6 @@ User.prototype.checkPass = function(password) {
   var val = bcrypt.compareSync(password, this.password);
   return val
 }
-
 
 User.sync()
     .catch(error => console.log(error.stack));

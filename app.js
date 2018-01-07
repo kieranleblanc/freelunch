@@ -3,6 +3,7 @@
 var express = require('express'),
 
     bodyParser = require('body-parser'),
+    config = require('./config.js'),
     cookieParser = require('cookie-parser'),
     favicon = require('serve-favicon'),
     flash = require('connect-flash'),
@@ -13,19 +14,6 @@ var express = require('express'),
     User = require('./models/user.js');
 
 var app = express();
-
-
-     /* Environment variables */
-
-const ev = process.env;
-const ENV = ev.ENV,
-      HOST = ev.HOST,
-      PORT = ev.PORT,
-      DBNAME = ev.DBNAME,
-      DBUSER = ev.DBUSER
-      DBPASS = ev.DBPASS,
-      SECRET = ev.SECRET; // <- Used for salting, cookies, etc
-
 
       /* View engine config */
 
@@ -50,7 +38,7 @@ app.use('scripts', express.static(path.join(__dirname, '/node_modules/bootstrap/
 var options = {
      resave: false,
      saveUninitialized: false,
-     secret: SECRET
+     secret: process.env.SECRET
 };
 
 var clearIfLoggedOut = (req, res, next) => {
@@ -105,11 +93,9 @@ app.post('/auth', function(req, res) {
      User.findOne({ where: { email: req.body.email } }).then(function (user) {
           console.log("PASSWORDIS " +req.body.password)
           if (!user || !user.checkPass(req.body.password) ) {
-               console.log("failed to validate pass2")
                res.setHeader('Content-Type', 'application/json');
                res.send(error);
           } else {
-               console.log("validated pass")
                req.session.user = user;
                res.send(success);
           }

@@ -1,5 +1,7 @@
 mixin error
-     div.alert.alert-danger.alert-dismissable(id="error", name="error", hidden)
+     div.alert.alert-danger.alert-dismissable(
+               id="error", name="error", style="z-index:3" hidden
+          )
           a.close(href="#", data-dismiss="alert", aria-label="close")
                span &times;
           p(style="margin:auto") Something went wrong!
@@ -7,4 +9,4 @@ mixin error
 mixin selector
      div.wrapper(style="text-align:center")
           button.wide
-               p(onclick='return submitLoginForm()') Select
+               p(onclick='return didSubmitForm()') Select

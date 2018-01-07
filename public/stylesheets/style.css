@@ -51,6 +51,7 @@ p {
 
 .overlay {
      z-index:2;
+     margin-left: calc(50%-100px);
 }
 
 .top {
